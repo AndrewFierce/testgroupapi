@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Заголовок -->
+
+<head>
+    <title>Feedback form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">                                  <!-- Здесь и далее в проекте будет использоваться кодировка utf-8 -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">    <!-- Подключение стилей bootstrap -->
+    <link rel="stylesheet" href="css/animate.css">          <!-- Подключение стилей анимации -->
+</head>
+
+<!-- Конец заголовка -->
+
+<!-- Тело документа -->
+
+<body style="background-color: #5371a3">    <!-- Установим светло-синий фон проекта -->
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">      <!-- Подбираем ширину макета -->
+    <div class="well" style="margin-top: 10%;">
+    <h3>Диалоги</h3>
+
+    <!-- Форма обратной связи -->
+
+    <form role="form" id="contactForm" data-toggle="validator" class="shake">
+        <div class="row">                       <!-- Создаем строку из элементов col -->
+
+            <!-- Поле ввода даты -->
+            <div class="form-group col-sm-12">   <!-- Подбираем ширину для ввода имени -->
+                <label for="date" class="h4">Дата на момент которой интересует история сообщений</label>
+                <input type="number" max="99999999" class="form-control" id="date" placeholder="Введите дату в формате ddmmyyyy" required data-error="Введите, пожалуйста, дату">
+                <div class="help-block with-errors"></div>
+            </div>
+            <!-- Конец формы поля ввода даты -->
+        </div>
+        
+        <!-- Поле вывода сообщений -->
+        <div class="form-group">
+            <label for="message" class="h4 ">Статистика по ответам</label>
+            <div id="messages"></div>
+        </div>
+        <!-- Конец поля вывода сообщений -->
+
+        <!--Блок капчи-->
+      <img id="img-captcha" src="php/captcha.php">  <!-- Изображение капчи -->
+          
+          <!--Поле для ввода кода CAPTCHA-->
+          <div class="form-group has-feedback">
+                <label id="label-captcha" for="captcha" class="control-label">Пожалуйста, введите указанный на изображении код:</label>
+            <input id="text-captcha" name="captcha" type="text" class="form-control" required="required" value="">
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+        <!-- Конец блока капчи-->
+
+        <!-- Кнопка для отправки сообщения-->
+        <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Отправить</button>
+        <div id="msgSubmit" class="h3 text-center hidden"></div>
+        <div class="clearfix"></div>
+    </form>
+
+    <!-- Конец формы обратной связи -->
+
+    </div>
+</div>
+</div>
+</body>
+
+<!-- Конец тела документа -->
+
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>  <!--Подключение библиотеки jQuery-->
+<script type="text/javascript" src="js/validator.min.js"></script>      <!-- Библиотека валидатора форм -->
+<script type="text/javascript" src="js/form-scripts.js"></script>       <!-- java скрипт для обработки формы -->
+
+</html>
