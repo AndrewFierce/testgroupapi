@@ -33,7 +33,7 @@ if ($_SESSION["code"] != $_POST["captcha"]) {
 
 //Работа в API VK
 $vk = new VKApiClient(); 
-$access_token = '4e9a0a15d34af6507ce9a101e69690e2ee634160c414c013858af39365f64eb94244cc8969d9e58f2f7a2';
+$access_token = 'string_of_access_tocken';
 
 $vkObj = new VKApi($vk, $access_token);
 $timeAnswer = $vkObj->average_response_time($_POST["date"]);
